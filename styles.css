@@ -249,14 +249,18 @@ button:hover {
 
     .panel-toggle {
         display: block;
-        position: absolute;
+        position: sticky;
         top: 10px;
-        right: 10px;
+        align-self: flex-end; /* Aligns button to the right in a flex column */
         z-index: 105;
         width: 70px;
         padding: 8px;
-        background-color: rgba(0, 86, 179, 0.2);
+        background-color: rgba(0, 86, 179, 0.8);
         border: 1px solid var(--border-color);
+        /* Add a small negative margin to pull the content below it up slightly, 
+           ensuring it doesn't create extra vertical space */
+        margin-bottom: -40px;
+        float: right; /* Fallback and reinforcement for alignment */
     }
 
     #mobile-panel-toggles {
