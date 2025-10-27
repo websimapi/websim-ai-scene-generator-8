@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Scene Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Generating...</p>
+    </div>
+    <div id="app-container">
+        <div id="left-panel">
+            <button id="toggle-left-panel" class="panel-toggle">Hide</button>
+            <h2>Scene</h2>
+            <div class="control-group">
+                <label for="scene-prompt">Background Prompt</label>
+                <textarea id="scene-prompt" rows="3">A vibrant, magical forest clearing at dusk, fantasy art</textarea>
+                <button id="generate-scene-btn">Generate Scene</button>
+            </div>
+            <hr>
+            <h2>Assets</h2>
+            <div class="control-group">
+                <label for="asset-prompt">Asset Prompt</label>
+                <input type="text" id="asset-prompt" placeholder="e.g., 'A glowing crystal'">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="asset-transparent" checked>
+                    <label for="asset-transparent">Transparent Background</label>
+                </div>
+                <label for="asset-type">Asset Type</label>
+                <select id="asset-type">
+                    <option value="Object">Object</option>
+                    <option value="Portal">Portal</option>
+                    <option value="NPC">NPC</option>
+                    <option value="Item">Item</option>
+                    <option value="Character">Character</option>
+                </select>
+                <button id="generate-asset-btn">Generate Asset</button>
+            </div>
+            <h3>Asset Library</h3>
+            <div id="asset-library">
+                <!-- Generated assets will appear here -->
+            </div>
+        </div>
+        <div id="main-content">
+            <div id="toolbar">
+                <button id="tool-move" class="tool-btn active" title="Move Tool"><img src="move_icon.png" alt="Move"></button>
+                 <button id="tool-add" class="tool-btn" title="Add Last Asset"><img src="add_icon.png" alt="Add"></button>
+                <button id="tool-delete" class="tool-btn" title="Delete Selected Asset"><img src="delete_icon.png" alt="Delete"></button>
+                <button id="import-json-btn" class="tool-btn" title="Import Scene from JSON"><img src="import_icon.png" alt="Import"></button>
+                <button id="export-json-btn" class="tool-btn" title="Export Scene to JSON"><img src="export_icon.png" alt="Export"></button>
+                <button id="save-btn" class="tool-btn" title="Save Scene"><img src="save_icon.png" alt="Save"></button>
+            </div>
+            <canvas id="editor-canvas"></canvas>
+            <div id="mobile-panel-toggles">
+                <button id="mobile-toggle-left" class="mobile-panel-toggle">Assets</button>
+                <button id="mobile-toggle-right" class="mobile-panel-toggle">Properties</button>
+            </div>
+        </div>
+        <div id="right-panel">
+            <button id="toggle-right-panel" class="panel-toggle">Hide</button>
+             <h2>Properties</h2>
+             <div id="properties-panel-content">
+                <p>Select an asset to see its properties.</p>
+             </div>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
