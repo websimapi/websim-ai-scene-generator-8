@@ -173,11 +173,38 @@ button:hover {
 }
 
 .panel-toggle {
-    display: none; /* Hidden by default */
+    display: block;
+    position: sticky;
+    top: -10px;
+    align-self: flex-end; /* Aligns button to the right in a flex column */
+    z-index: 105;
+    width: 70px;
+    padding: 4px 8px;
+    background-color: rgba(0, 86, 179, 0.4);
+    border: 1px solid var(--border-color);
+    /* Add a small negative margin to pull the content below it up slightly, 
+       ensuring it doesn't create extra vertical space */
+    margin-bottom: -30px;
+    float: right; /* Fallback and reinforcement for alignment */
 }
 
 #mobile-panel-toggles {
-    display: none; /* Hidden by default */
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 50;
+}
+
+.mobile-panel-toggle {
+    flex-grow: 1;
+    height: 100%;
+    background: var(--panel-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0;
 }
 
 
@@ -250,16 +277,16 @@ button:hover {
     .panel-toggle {
         display: block;
         position: sticky;
-        top: 10px;
+        top: -10px;
         align-self: flex-end; /* Aligns button to the right in a flex column */
         z-index: 105;
         width: 70px;
-        padding: 8px;
-        background-color: rgba(0, 86, 179, 0.8);
+        padding: 4px 8px;
+        background-color: rgba(0, 86, 179, 0.4);
         border: 1px solid var(--border-color);
         /* Add a small negative margin to pull the content below it up slightly, 
            ensuring it doesn't create extra vertical space */
-        margin-bottom: -40px;
+        margin-bottom: -30px;
         float: right; /* Fallback and reinforcement for alignment */
     }
 
